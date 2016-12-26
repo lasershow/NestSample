@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Game Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Game</th>
+      <th>Amazon</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @game_details.each do |game_detail| %>
+      <tr>
+        <td><%= game_detail.game %></td>
+        <td><%= game_detail.amazon %></td>
+        <td><%= link_to 'Show', game_detail %></td>
+        <td><%= link_to 'Edit', edit_game_detail_path(game_detail) %></td>
+        <td><%= link_to 'Destroy', game_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Game detail', new_game_detail_path %>
